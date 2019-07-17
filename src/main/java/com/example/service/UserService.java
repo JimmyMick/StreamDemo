@@ -5,5 +5,5 @@ import com.example.model.Person;
 import java.util.List;
 
 public interface UserService {
-    List<Person> getUsers();
+    List<Person> getUsers(String company);
 }

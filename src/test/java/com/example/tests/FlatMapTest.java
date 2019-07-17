@@ -1,7 +1,6 @@
-package com.example.util;
+package com.example.tests;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class FlatMapTest {
 
-    @DisplayName("Flat Map Test")
+
     @Test
     public void testFlatMap(){
 

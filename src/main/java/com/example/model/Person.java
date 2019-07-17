@@ -4,14 +4,16 @@ public class Person {
     String firstName;
     String lastName;
     String company;
+    int age;
 
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String company) {
+    public Person(String firstName, String lastName, String company, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.company = company;
+        this.age = age;
     }
 
     public String getName(){
@@ -41,4 +43,10 @@ public class Person {
     public void setCompany(String company) {
         this.company = company;
     }
+
+    public int getAge() { return age; }
+
+    public void setAge(int age) { this.age = age; }
+
+
 }
