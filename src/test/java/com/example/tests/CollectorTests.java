@@ -45,14 +45,14 @@ public class CollectorTests {
 
         List<President> results = presidents.stream().filter(n -> {
 
-            if(n.number == 99){
+            if(n.number > 45){
                 return false;
             }
 
             if (n.number == 2) {
                 n.name = "Johnny";
 
-//                        presidents.add(new President("John Quincy",6));
+//              presidents.add(new President("John Quincy",6));
 // would cause java.util.ConcurrentModificationException
             }
             n.name = n.name.toUpperCase();
