@@ -22,9 +22,7 @@ public class MethodReferenceTests {
     @Test
     public void instanceMethod(){
 
-        StrLogger myLogger = (s) -> {
-            System.out.println(s);
-        };
+        StrLogger myLogger = System.out::println;
 
         myLogger.log("Hello, KCDC");
 
@@ -33,7 +31,7 @@ public class MethodReferenceTests {
     @Test
     public void staticMethod(){
 
-        UpperCaseIt upperCaseUtil = s -> s.toUpperCase();
+        UpperCaseIt upperCaseUtil = String::toUpperCase;
 
         System.out.println( upperCaseUtil.toUpper("kcdc is always informative") );
 

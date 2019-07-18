@@ -18,9 +18,12 @@ public class MapTest {
         List<List<String>> list = Arrays.asList(
                 Arrays.asList("a"),
                 Arrays.asList("b"));
+
         System.out.println(list);
 
-        List<String> results =  list.stream().flatMap( lstOfString -> lstOfString.stream() ).collect(Collectors.toList());
+        List<String> results =  list.stream()
+                                    .flatMap( lstOfString -> lstOfString.stream() )
+                                    .collect(Collectors.toList());
 
         System.out.println(results);
 
@@ -31,11 +34,15 @@ public class MapTest {
 
         Faker faker = new Faker();
 
-        Supplier<Beer> randomBeerSupplier = faker::beer;
+        Supplier<Beer> randomBeerSupplier = () -> faker.beer();
 
         Stream<Beer> randomBeerStream = Stream.generate(randomBeerSupplier);
 
-        List<String> beers = randomBeerStream.skip(5).limit(10).map( b -> b.name() + " - " + b.style()).collect(Collectors.toList());
+        List<String> beers = randomBeerStream
+                                    .skip(5)
+                                    .limit(10)
+                                    .map( b -> b.name() + " - " + b.style())
+                                    .collect(Collectors.toList());
 
         beers.forEach( System.out::println);
 
